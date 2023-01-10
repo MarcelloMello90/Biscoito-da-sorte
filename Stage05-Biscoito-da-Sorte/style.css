@@ -1,192 +1,140 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   font-size: 62.5%;
-
-  --ff-tex01: 'Montserrat', sans-serif;
-  --ff-paragBut: 'DM Sans', sans-serif;
-  --ff-text02:'Dancing Script', cursive;
-  
-  --fc-text01: hsla(238, 27%, 28%);
-  --fc-text02: hsla(238, 100%, 0%);
-  --fc-but: hsla(238, 0%, 100%);
-
-  --bg-main: hsla(238, 0%,100%);
-  --bg-text02: hsl(198, 32%, 92%);
-  --bg-but02: hsl(35, 100%, 50%);
-  --bg-butHover: hsl(35, 86%, 60%);
-
 }
 
-.hide{
-  display: none;
-}
-
-body{
-  background: linear-gradient(45deg, #190361 0%, #BB00FF 100%);
+body {
+  background: linear-gradient(45deg, #190361, #bb00ff);
+  font-size: 1.6rem;
   display: grid;
   place-items: center;
   height: 100vh;
-  font-size: 1.6rem;
+
 }
 
-main{
-  width: 42.8rem;
-  min-height: 42.4rem;
 
-  background: var(--bg-main);
+body,button {
+  font-family: 'DM Sans', sans-serif;
+  }
+
+
+main {
+  background: #ffffff;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.8);
   border-radius: .5rem;
-  display: grid;
-  place-items: center;
-
-}
-
-/*card01*/
-.wrapper01{ 
-  width: 30rem;
-  height: 31.2rem;
-
-  display: grid;
-  place-items: center;
-  align-items: center;
+  padding: 4.8rem 6.4rem 6.4rem;
+  width: min(42.8rem, 90%);
+  margin-top: -8rem;
   text-align: center;
-  gap: 2rem;
+  
 }
 
-h1, h2{
-  width: 30rem;
+.hide {
+  display: none;
+}
 
-  font-family: var(--ff-tex01);
-  font-style: normal;
-  font-weight: 700;
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.4rem;
-  line-height: 2.9rem;
-
-  color: var(--fc-text01);
+  margin-bottom: 1.6rem;
 }
 
-p{
-  font-family: var(--ff-paragBut);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-
-  color: var(--fc-text01);
+h1, p {
+  color: #34355b;
 }
 
-button{
-background-color: var(--bg-main);
-cursor: pointer;
-border: none;
+
+#fortuneCookie {
+  width: 300px;
+  height: 200px;
+  background-image: url(./images/fortune-cookie.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 20px 30px 0px 0px;
+
 }
 
-#img01:hover{
-  animation: tremer .2s;
+#fortuneCookie:hover {
+  cursor: pointer;
+  animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
 
-/*Card 02*/
 
-  
-.wrapper02{ 
-  width: 30rem;
-  min-height: 31.2rem;
-
-  display: grid;
-  place-items: center;
-  align-items: center;
-  text-align: center;
-  gap: 2rem;
-  margin: 4.8rem;
-
-}
-
-h2{
-  margin-bottom: 1.7rem;
-}
-
-#text2{
-  font-family: var(--ff-text02);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-
-  color: var(--ff-text02);
-
-  width: 293px;
-  height: 107px;
-  padding: 1rem;
-
-  background: var(--bg-text02);
+.screen2 h2 {
+  font-size: 2.4rem;
+  font-family: 'Dancing Script', cursive;
+  font-weight: normal;
+  background-color: #e4edf1;
+  box-shadow: 0 .2rem .4rem rgba(0,0,0,0.1);
+  animation-name: toFadeIn;
+  animation-duration: 2s;
+  text-align: center;  
+  padding: 10px; 
   box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
-
-  animation: downtop 2800ms;
+  
 }
 
-#img2{
-  margin: 3rem auto;
+
+#crackedCookie {
+  width: 300px;
+  height: 200px;
+  background-image: url(./images/opened-cookie.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-#but02{
-  width: 17.4rem;
-  height: 5.2rem;
 
-  background: var(--bg-but02);
-  border-radius: 4px;
-
-  font-family: var(--ff-paragBut);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 2rem;
-
-  text-align: center;
-
-  color: var(--fc-but);
-
+button {
+  background-color: #ff9500;
+  color: white;
+  font-weight: bold;
+  border-radius: .4rem .4rem .4rem .4rem;
+  cursor: pointer;
   transition: background .3s;
+  border: 0;
+  padding: 1.6rem;
+}
+
+button:hover {
+  background-color: #d37b01;
 }
 
 
-#but02:hover{
-  background-color: var(--bg-butHover);
-}
-
-
-
-
-@keyframes downtop{
+@keyframes toFadeIn {
   0% {
-    opacity: 0;
-    transform: translateY(150px);
-    width: 0%;
-    font-size: 0%;
+    transform:
+    translateY(150px)
+    scale(0.1);
+
   }
 
-}
-
-@keyframes tremer {
-  0% {
-    margin-left: 0;
-  }
-  25% {
-    margin-left: 7px;
-  }
-  50% {
-    margin-left: 0;
-  }
-  75% {
-    margin-left: -7px;
-  }
   100% {
-    margin-left: 0;
+    transform:
+    translateY(0px)
+    scale(1);
   }
+}
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
